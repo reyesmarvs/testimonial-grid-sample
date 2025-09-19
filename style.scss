@@ -1,0 +1,198 @@
+:root {
+  --dark-blue: hsl(219, 29%, 14%);
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --semi-dark-grayish-blue: hsl(224, 10%, 45%);
+  --light-grayish-blue: hsl(240, 5%, 95%);
+  --purple: hsl(263, 55%, 52%);
+  --light-purple: hsl(264, 100%, 74%);
+  --light-gray: hsl(0, 0%, 86%);
+  --white: hsl(0, 0%, 100%);
+  --font-family: "Barlow Semi Condensed", sans-serif;
+  --font-size-s: 0.8rem;
+  --font-size-m: 0.9rem;
+  --font-size-l: 1.35rem;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url(./assets/fonts/BarlowSemiCondensed-SemiBold.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: var(--font-family);
+  background-color: var(--light-grayish-blue);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+
+    .card {
+      background-color: var(--white);
+      border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: left;
+      position: relative;
+      float: left;
+      z-index: 1;
+      box-shadow: 25px 50px 45px rgba(0, 0, 0, 0.15);
+
+      &:nth-child(1) {
+        grid-column: span 2;
+        background-color: var(--purple);
+        position: relative;
+
+        &::before {
+          content: url("./assets/images/bg-pattern-quotation.svg");
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 4em;
+          z-index: -1;
+          width: 110px;
+          height: auto;
+          text-align: right;
+        }
+
+        .profile {
+          picture {
+            .avatar {
+              border: 2px solid var(--light-purple);
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        background-color: var(--dark-grayish-blue);
+      }
+
+      &:nth-child(3) {
+        grid-row-start: 2;
+
+        .profile {
+          header {
+            color: var(--semi-dark-grayish-blue);
+          }
+        }
+
+        .card-content {
+          .main-testimonial,
+          .full-testimonial {
+            color: var(--semi-dark-grayish-blue);
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        grid-column: span 2;
+        background-color: var(--dark-blue);
+
+        .card-content {
+          .main-testimonial {
+            color: var(--light-gray);
+          }
+        }
+
+        .profile {
+          picture {
+            img {
+              border: 2px solid var(--light-purple);
+            }
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        grid-row: span 2;
+
+        .profile {
+          header {
+            color: var(--semi-dark-grayish-blue);
+          }
+        }
+
+        .card-content {
+          .main-testimonial,
+          .full-testimonial {
+            color: var(--semi-dark-grayish-blue);
+          }
+        }
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        picture {
+          .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+
+        header {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          font-size: var(--font-size-s);
+          line-height: 1.2;
+          color: var(--white);
+
+          .name {
+            font-weight: 500;
+          }
+        }
+      }
+
+      .card-content {
+        width: 100%;
+
+        .main-testimonial {
+          font-size: var(--font-size-l);
+          color: var(--white);
+          margin-bottom: 1rem;
+        }
+
+        .full-testimonial {
+          font-size: var(--font-size-m);
+          color: var(--light-gray);
+          line-height: 1.4;
+        }
+      }
+      @media screen and (max-width: 900px) {
+        &::before {
+          display: none;
+        }
+      }
+    }
+    @media screen and (max-width: 720px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

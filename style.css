@@ -1,0 +1,157 @@
+:root {
+  --dark-blue: hsl(219, 29%, 14%);
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --semi-dark-grayish-blue: hsl(224, 10%, 45%);
+  --light-grayish-blue: hsl(240, 5%, 95%);
+  --purple: hsl(263, 55%, 52%);
+  --light-purple: hsl(264, 100%, 74%);
+  --light-gray: hsl(0, 0%, 86%);
+  --white: hsl(0, 0%, 100%);
+  --font-family: "Barlow Semi Condensed", sans-serif;
+  --font-size-s: 0.8rem;
+  --font-size-m: 0.9rem;
+  --font-size-l: 1.35rem;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url(./assets/fonts/BarlowSemiCondensed-SemiBold.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: var(--font-family);
+  background-color: var(--light-grayish-blue);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.container .testimonials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+.container .testimonials .card {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+  position: relative;
+  float: left;
+  z-index: 1;
+  box-shadow: 25px 50px 45px rgba(0, 0, 0, 0.15);
+}
+.container .testimonials .card:nth-child(1) {
+  grid-column: span 2;
+  background-color: var(--purple);
+  position: relative;
+}
+.container .testimonials .card:nth-child(1)::before {
+  content: url("./assets/images/bg-pattern-quotation.svg");
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 4em;
+  z-index: -1;
+  width: 110px;
+  height: auto;
+  text-align: right;
+}
+.container .testimonials .card:nth-child(1) .profile picture .avatar {
+  border: 2px solid var(--light-purple);
+}
+.container .testimonials .card:nth-child(2) {
+  background-color: var(--dark-grayish-blue);
+}
+.container .testimonials .card:nth-child(3) {
+  grid-row-start: 2;
+}
+.container .testimonials .card:nth-child(3) .profile header {
+  color: var(--semi-dark-grayish-blue);
+}
+.container .testimonials .card:nth-child(3) .card-content .main-testimonial,
+.container .testimonials .card:nth-child(3) .card-content .full-testimonial {
+  color: var(--semi-dark-grayish-blue);
+}
+.container .testimonials .card:nth-child(4) {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column: span 2;
+  background-color: var(--dark-blue);
+}
+.container .testimonials .card:nth-child(4) .card-content .main-testimonial {
+  color: var(--light-gray);
+}
+.container .testimonials .card:nth-child(4) .profile picture img {
+  border: 2px solid var(--light-purple);
+}
+.container .testimonials .card:nth-child(5) {
+  grid-row: span 2;
+}
+.container .testimonials .card:nth-child(5) .profile header {
+  color: var(--semi-dark-grayish-blue);
+}
+.container .testimonials .card:nth-child(5) .card-content .main-testimonial,
+.container .testimonials .card:nth-child(5) .card-content .full-testimonial {
+  color: var(--semi-dark-grayish-blue);
+}
+.container .testimonials .card .profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.container .testimonials .card .profile picture .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.container .testimonials .card .profile header {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: var(--font-size-s);
+  line-height: 1.2;
+  color: var(--white);
+}
+.container .testimonials .card .profile header .name {
+  font-weight: 500;
+}
+.container .testimonials .card .card-content {
+  width: 100%;
+}
+.container .testimonials .card .card-content .main-testimonial {
+  font-size: var(--font-size-l);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.container .testimonials .card .card-content .full-testimonial {
+  font-size: var(--font-size-m);
+  color: var(--light-gray);
+  line-height: 1.4;
+}
+@media screen and (max-width: 900px) {
+  .container .testimonials .card::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  .container .testimonials {
+    display: flex;
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=style.css.map */
